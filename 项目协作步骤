@@ -1,4 +1,4 @@
-1、将建好的仓库克隆到本地
+1、将建好的仓库克隆到本地（除了特殊的说明，统一是在命名行里面操作，就是git bash）
 git clone "https://github.com/SplendidSong/BlockChainReceiptPlatform.git"
 
 2、默认在master分支上，需要检出远程dev分支到本地dev
@@ -7,7 +7,7 @@ git checkout -b dev origin/dev
 3、不直接在本地dev分支上写代码，不然就跟svn没什么两样了，基于本地dev分支建一个自己的本地分支，名字自己起，这里是shenlinsong（沈林松），改成你能记住的名字
 git checkout -b shenlinsong dev
 
-4、此时，就切换到了本地你的分支上，开始写功能，写完后查看你本地做了哪些修改
+4、此时，就切换到了本地你的分支上，开始写功能（打开文件夹，用文本编辑器），写完后查看你本地做了哪些修改（回到命令行）
 git status
 
 5、然后
