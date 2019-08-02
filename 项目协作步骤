@@ -1,0 +1,38 @@
+1、将建好的仓库克隆到本地
+git clone "https://github.com/SplendidSong/BlockChainReceiptPlatform.git"
+
+2、默认在master分支上，需要检出远程dev分支到本地dev
+git checkout -b dev origin/dev
+
+3、不直接在本地dev分支上写代码，不然就跟svn没什么两样了，基于本地dev分支建一个自己的本地分支，名字自己起，这里是shenlinsong（沈林松），改成你能记住的名字
+git checkout -b shenlinsong dev
+
+4、此时，就切换到了本地你的分支上，开始写功能，写完后查看你本地做了哪些修改
+git status
+
+5、然后
+git add '修改的文件名（包含目录）'
+
+6、来把你的修改添加到暂存区去，接下来提交代码到本地shenlinsong（如第3步，改成你的名字）分支，xxxx对应这次修改的简介
+git commit -m "xxxx"
+
+7、建议每完成一个任务的其中一个小功能就重复一次4、5、6步骤，每次写代码至少要合并推送一次到dev分支。确保你的代码不能影响别人的运行，也不会跟最新的代码相差太远。首先，切换到本地dev分支
+git checkout dev
+
+8、拉取最新dev分支代码，可能在你写本地文件的时候，别人提交过代码了
+git pull
+
+9、合并本地shenlinsong（如第3步，改成你的名字）分支代码到本地dev分支
+git merge shenlinsong
+
+10、推送你改动的代码到远程dev分支
+git push
+
+11、切换到本地shenlinsong（如第3步，改成你的名字）分支
+git checkout shenlinsong
+
+12、合并本地dev分支到本地xiaozhi分支
+git merge dev
+
+注意：至此，你将你的改动推送到了远程，你的本地也是最新代码了，继续去做其他任务，然后重复4、5、6、7、8、9、10、11、12步骤，直到完成
+注意：这里是第一次使用git需要做的事情，从第二次开始可以直接从第4步开始，先输入git checkout shenlinsong（如第3步，改成你的名字），然后进行第4步及以后的操作
