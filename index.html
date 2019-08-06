@@ -2,6 +2,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
     </head>
     <body>
         <input id="num1" placeholder="操作数1"/>
@@ -31,16 +32,12 @@
                 $('#operator').html('/')
             })
             $('#calculate').on('click', function() {
-                $.ajax({
-                    url: 'http://localhost:3000/calculate',
-                    data: {
-                        num1: $('num1').val,
-                        num2: $('num2').val,
-                        operator: $('operator').html()
-                    },
-                    success: function(result) {
-                        $('#result').html(result)
-                    }
+                axios.post('http://localhost:3000/calculate', {
+                    num1: $('#num1').val(),
+                    num2: $('#num2').val(),
+                    operator: $('#operator').html()
+                }).then(function(result) {
+                    
                 })
             })
         </script>
